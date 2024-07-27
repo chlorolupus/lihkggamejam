@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq2wdtogux58x"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_4qahf"]
+[ext_resource type="Script" path="res://scripts/deck.gd" id="1_nm4k7"]
+[ext_resource type="Texture2D" uid="uid://dyb5ugymof4w7" path="res://icon.svg" id="2_pdd0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66i6j"]
+size = Vector2(100, 100)
+
+[node name="Game" type="Node2D"]
+position = Vector2(356, 227)
+script = ExtResource("1_4qahf")
+
+[node name="Deck" type="Node" parent="."]
+script = ExtResource("1_nm4k7")
+
+[node name="CityA" type="Sprite2D" parent="."]
+texture = ExtResource("2_pdd0n")
+
+[node name="CityB" type="Sprite2D" parent="."]
+position = Vector2(454, -2)
+texture = ExtResource("2_pdd0n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(229, 253)
+
+[node name="Card" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_66i6j")
+metadata/_edit_lock_ = true
