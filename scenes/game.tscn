@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq2wdtogux58x"]
+[gd_scene load_steps=8 format=3 uid="uid://cq2wdtogux58x"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4qahf"]
 [ext_resource type="Script" path="res://scripts/deck.gd" id="1_nm4k7"]
 [ext_resource type="Texture2D" uid="uid://dyb5ugymof4w7" path="res://icon.svg" id="2_pdd0n"]
+[ext_resource type="Texture2D" uid="uid://c1dqaron1v0di" path="res://images/sprites/icons/Fire.png" id="4_jsikk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dsrx"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhg7w"]
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66i6j"]
 size = Vector2(100, 100)
@@ -11,22 +18,190 @@ size = Vector2(100, 100)
 script = ExtResource("1_4qahf")
 metadata/_edit_lock_ = true
 
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(0.47451, 0.360784, 0.203922, 1)
+polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1136, 0, 1136)
+metadata/_edit_lock_ = true
+
+[node name="CityLandA" type="Polygon2D" parent="."]
+position = Vector2(480, 384)
+color = Color(0.216667, 1, 0, 1)
+polygon = PackedVector2Array(0, 0, 0, 192, 288, 192, 288, 0)
+
+[node name="CityLandB" type="Polygon2D" parent="."]
+position = Vector2(1152, 384)
+color = Color(0.216667, 1, 0, 1)
+polygon = PackedVector2Array(0, 0, 0, 192, 288, 192, 288, 0)
+
 [node name="Deck" type="Node" parent="."]
 script = ExtResource("1_nm4k7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(336, 224)
+[node name="CityA" type="StaticBody2D" parent="."]
+position = Vector2(624, 480)
 
-[node name="CityA" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite" type="Sprite2D" parent="CityA"]
 texture = ExtResource("2_pdd0n")
 metadata/_edit_lock_ = true
 
-[node name="CityB" type="Sprite2D" parent="."]
-position = Vector2(837, 230)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CityA"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="CityB" type="StaticBody2D" parent="."]
+position = Vector2(1296, 480)
+
+[node name="Sprite" type="Sprite2D" parent="CityB"]
 texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CityB"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-59, 175)
+target_position = Vector2(2.08165e-12, 10)
+hit_from_inside = true
+
+[node name="ProgressBar1" type="TextureProgressBar" parent="."]
+offset_left = 528.0
+offset_top = 320.0
+offset_right = 1028.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="."]
+offset_left = 576.0
+offset_top = 320.0
+offset_right = 1076.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar3" type="TextureProgressBar" parent="."]
+offset_left = 624.0
+offset_top = 320.0
+offset_right = 1124.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar4" type="TextureProgressBar" parent="."]
+offset_left = 672.0
+offset_top = 320.0
+offset_right = 1172.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar5" type="TextureProgressBar" parent="."]
+offset_left = 1200.0
+offset_top = 320.0
+offset_right = 1700.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar6" type="TextureProgressBar" parent="."]
+offset_left = 1248.0
+offset_top = 320.0
+offset_right = 1748.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar7" type="TextureProgressBar" parent="."]
+offset_left = 1296.0
+offset_top = 320.0
+offset_right = 1796.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
+
+[node name="ProgressBar8" type="TextureProgressBar" parent="."]
+offset_left = 1344.0
+offset_top = 320.0
+offset_right = 1844.0
+offset_bottom = 820.0
+scale = Vector2(0.1, 0.1)
+max_value = 10.0
+step = 0.1
+value = 5.0
+fill_mode = 3
+texture_under = ExtResource("4_jsikk")
+texture_over = ExtResource("4_jsikk")
+texture_progress = ExtResource("4_jsikk")
+tint_under = Color(0.22, 0.179667, 0, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.91, 0.7735, 0, 1)
 
 [node name="Card" type="StaticBody2D" parent="."]
-position = Vector2(600, 500)
+position = Vector2(976, 976)
+scale = Vector2(1, 2)
 
 [node name="Sprite" type="Sprite2D" parent="Card"]
 texture = ExtResource("2_pdd0n")
@@ -35,88 +210,3 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Card"]
 shape = SubResource("RectangleShape2D_66i6j")
 metadata/_edit_lock_ = true
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-59, 175)
-target_position = Vector2(2.08165e-12, 10)
-hit_from_inside = true
-
-[node name="ProgressBar1" type="ProgressBar" parent="."]
-offset_left = 256.0
-offset_top = 24.0
-offset_right = 276.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar2" type="ProgressBar" parent="."]
-offset_left = 304.0
-offset_top = 24.0
-offset_right = 324.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar3" type="ProgressBar" parent="."]
-offset_left = 352.0
-offset_top = 24.0
-offset_right = 372.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar4" type="ProgressBar" parent="."]
-offset_left = 400.0
-offset_top = 24.0
-offset_right = 420.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar5" type="ProgressBar" parent="."]
-offset_left = 752.0
-offset_top = 24.0
-offset_right = 772.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar6" type="ProgressBar" parent="."]
-offset_left = 800.0
-offset_top = 24.0
-offset_right = 820.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar7" type="ProgressBar" parent="."]
-offset_left = 848.0
-offset_top = 24.0
-offset_right = 868.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
-
-[node name="ProgressBar8" type="ProgressBar" parent="."]
-offset_left = 896.0
-offset_top = 24.0
-offset_right = 916.0
-offset_bottom = 134.0
-max_value = 10.0
-value = 5.0
-fill_mode = 3
-show_percentage = false
