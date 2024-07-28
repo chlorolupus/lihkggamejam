@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var CardDefaultPos : Vector2 = Vector2(600.0, 600.0)
+var CardDefaultPos : Vector2 = Vector2(976.0, 976.0)
 
 var CitiesStats = [[5.0, 5.0, 5.0, 5.0], [5.0, 5.0, 5.0, 5.0]]
 var CardEffect = [0, 0.0, 0, 0.0]
