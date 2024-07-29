@@ -1,12 +1,5 @@
-extends Node2D
+extends Node3D
 
-
-var CardDefaultPos : Vector2 = Vector2(976.0, 976.0)
-
-var CitiesStats = [[5.0, 5.0, 5.0, 5.0], [5.0, 5.0, 5.0, 5.0]]
-var CardEffect = [0, 0.0, 0, 0.0]
-
-var IsGrabbing : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,25 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_node("RayCast2D").position = get_global_mouse_position()
+	var WorldPos = get_node("Camera3D").project_position(get_viewport().get_mouse_position(), 0.0)
+	get_node("RayCast3D").transform.origin = WorldPos
+	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		#print(get_node("RayCast2D").position)
-		#print(get_node("Card").position)
-		if get_node("RayCast2D").get_collider() == get_node("Card"):
-			IsGrabbing = true
-		if IsGrabbing:
-			get_node("Card/Sprite").modulate = Color.RED
-			get_node("Card").position = get_global_mouse_position()
-		#else:
-			#get_node("Card/Sprite").modulate = Color.WHITE
-	else:
-		IsGrabbing = false
-		if get_node("RayCast2D").get_collider() == get_node("CityA"):
-			apply_card_effect(0, CardEffect[0], CardEffect[1], CardEffect[2], CardEffect[3])
-			
-		get_node("Card").position = CardDefaultPos
-	
-func apply_card_effect(City : int, Stat1 : int, Effect1 : float, Stat2 : int, Effect2 : float):
+		get_node("RayCast3D").get_collider().get_parent().mesh.material.albedo_color = Color.RED
 	pass
-	
-	

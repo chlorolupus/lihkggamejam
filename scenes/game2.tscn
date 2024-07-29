@@ -1,0 +1,391 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq2wdtogux58x"]
+
+[ext_resource type="Script" path="res://scripts/game1.gd" id="1_4qahf"]
+[ext_resource type="Texture2D" uid="uid://dyb5ugymof4w7" path="res://icon.svg" id="2_pdd0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dsrx"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhg7w"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66i6j"]
+size = Vector2(100, 100)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4qahf")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(0.47451, 0.360784, 0.203922, 1)
+polygon = PackedVector2Array(0, 0, 1920, 0, 1920, 1088, 0, 1088)
+metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-64, 192)
+target_position = Vector2(2.08165e-12, 10)
+hit_from_inside = true
+
+[node name="BuildingA1" type="StaticBody2D" parent="."]
+position = Vector2(320, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA1"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA1"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA2" type="StaticBody2D" parent="."]
+position = Vector2(448, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA2"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA2"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA3" type="StaticBody2D" parent="."]
+position = Vector2(576, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA3"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA3"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA4" type="StaticBody2D" parent="."]
+position = Vector2(704, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA4"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA4"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB1" type="StaticBody2D" parent="."]
+position = Vector2(1216, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB1"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB1"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB2" type="StaticBody2D" parent="."]
+position = Vector2(1344, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB2"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB2"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB3" type="StaticBody2D" parent="."]
+position = Vector2(1472, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB3"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB3"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB4" type="StaticBody2D" parent="."]
+position = Vector2(1600, 448)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB4"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB4"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB5" type="StaticBody2D" parent="."]
+position = Vector2(1152, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB5"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB5"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB6" type="StaticBody2D" parent="."]
+position = Vector2(1280, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB6"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB6"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB7" type="StaticBody2D" parent="."]
+position = Vector2(1408, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB7"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB7"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB8" type="StaticBody2D" parent="."]
+position = Vector2(1536, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB8"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB8"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB9" type="StaticBody2D" parent="."]
+position = Vector2(1200, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB9"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB9"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB10" type="StaticBody2D" parent="."]
+position = Vector2(1328, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB10"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB10"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB11" type="StaticBody2D" parent="."]
+position = Vector2(1456, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB11"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB11"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB12" type="StaticBody2D" parent="."]
+position = Vector2(1584, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB12"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB12"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB13" type="StaticBody2D" parent="."]
+position = Vector2(1136, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB13"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB13"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB14" type="StaticBody2D" parent="."]
+position = Vector2(1264, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB14"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB14"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB15" type="StaticBody2D" parent="."]
+position = Vector2(1392, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB15"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB15"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingB16" type="StaticBody2D" parent="."]
+position = Vector2(1520, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingB16"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingB16"]
+shape = SubResource("RectangleShape2D_nhg7w")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA5" type="StaticBody2D" parent="."]
+position = Vector2(384, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA5"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA5"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA6" type="StaticBody2D" parent="."]
+position = Vector2(512, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA6"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA6"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA7" type="StaticBody2D" parent="."]
+position = Vector2(640, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA7"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA7"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA8" type="StaticBody2D" parent="."]
+position = Vector2(768, 576)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA8"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA8"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA9" type="StaticBody2D" parent="."]
+position = Vector2(320, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA9"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA9"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA10" type="StaticBody2D" parent="."]
+position = Vector2(448, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA10"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA10"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA11" type="StaticBody2D" parent="."]
+position = Vector2(576, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA11"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA11"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA12" type="StaticBody2D" parent="."]
+position = Vector2(704, 704)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA12"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA12"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA13" type="StaticBody2D" parent="."]
+position = Vector2(384, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA13"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA13"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA14" type="StaticBody2D" parent="."]
+position = Vector2(512, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA14"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA14"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA15" type="StaticBody2D" parent="."]
+position = Vector2(640, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA15"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA15"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="BuildingA16" type="StaticBody2D" parent="."]
+position = Vector2(768, 832)
+
+[node name="Sprite" type="Sprite2D" parent="BuildingA16"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingA16"]
+shape = SubResource("RectangleShape2D_8dsrx")
+metadata/_edit_lock_ = true
+
+[node name="Card" type="StaticBody2D" parent="."]
+position = Vector2(976, 976)
+scale = Vector2(1, 2)
+
+[node name="Sprite" type="Sprite2D" parent="Card"]
+texture = ExtResource("2_pdd0n")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card"]
+shape = SubResource("RectangleShape2D_66i6j")
+metadata/_edit_lock_ = true
