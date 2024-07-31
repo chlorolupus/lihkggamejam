@@ -1,10 +1,12 @@
-[gd_scene load_steps=125 format=3 uid="uid://madpg3shuegj"]
+[gd_scene load_steps=126 format=3 uid="uid://madpg3shuegj"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_8bvr1"]
-[ext_resource type="Texture2D" uid="uid://dyb5ugymof4w7" path="res://icon.svg" id="2_en5kp"]
 [ext_resource type="Texture2D" uid="uid://bhenbk36ekins" path="res://images/sprites/props/Hut_00.png" id="2_m2vna"]
+[ext_resource type="Texture2D" uid="uid://bimatdhi57mmi" path="res://images/sprites/props/bonfire.png" id="3_y06vv"]
+[ext_resource type="Texture2D" uid="uid://cfl7u01gaj2hj" path="res://images/sprites/props/bush.png" id="4_7dpu4"]
 [ext_resource type="Texture2D" uid="uid://c1dqaron1v0di" path="res://images/sprites/icons/Fire.png" id="4_vrkdv"]
 [ext_resource type="Texture2D" uid="uid://6i4aty6quw7u" path="res://images/sprites/icons/Food.png" id="5_glvf2"]
+[ext_resource type="Texture2D" uid="uid://cruhwhr3fyde1" path="res://images/sprites/props/Hut_05.png" id="5_tyhyy"]
 [ext_resource type="Texture2D" uid="uid://suxhreia54ba" path="res://images/sprites/icons/Population.png" id="6_ji764"]
 [ext_resource type="Texture2D" uid="uid://b57frpa25tq2l" path="res://images/sprites/icons/Strength.png" id="7_0miaw"]
 
@@ -395,8 +397,6 @@ background_energy_multiplier = 0.7
 ambient_light_source = 2
 ambient_light_color = Color(0.807955, 0.303978, 4.37697e-07, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pvdoc"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkcpu"]
 albedo_color = Color(0.051971, 0.051971, 0.051971, 1)
 
@@ -421,10 +421,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA1"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="VillageA/BuildingA1"]
 
@@ -452,10 +467,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA2"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA3" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.956944, -0.1, 1.6)
@@ -478,10 +508,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA3"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA4" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37306, -0.1, 0.8)
@@ -504,10 +549,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA4"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA5" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435846, 0, 0.8)
@@ -530,10 +590,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA5"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA6" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.506944, 0, 0.8)
@@ -556,10 +631,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA6"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA6"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA6"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA7" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45694, -0.1, 0.8)
@@ -582,10 +672,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA7"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA7"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA7"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA8" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82585, -0.1, 0)
@@ -608,10 +713,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA8"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA8"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA8"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA9" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.925846, 0, 0)
@@ -634,10 +754,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA9"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA9"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA9"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA10" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154467, 0)
@@ -660,10 +795,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA10"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA10"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.85, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA10"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA11" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.956944, 0, 0)
@@ -686,10 +836,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA11"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA11"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA11"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA12" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85694, -0.1, 0)
@@ -712,10 +877,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA12"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA12"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA12"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA13" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37306, -0.1, -0.8)
@@ -738,10 +918,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA13"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA13"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA13"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA14" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.435846, 0, -0.8)
@@ -764,10 +959,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA14"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA14"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA14"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA15" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.506944, 0, -0.8)
@@ -790,10 +1000,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA15"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA15"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA15"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA16" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45694, -0.1, -0.8)
@@ -816,10 +1041,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA16"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA16"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA16"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA17" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843056, -0.1, -1.6)
@@ -842,10 +1082,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA17"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA17"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA17"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA18" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0569444, -0.1, -1.6)
@@ -868,10 +1123,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA18"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA18"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA18"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingA19" type="MeshInstance3D" parent="VillageA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.956944, -0.1, -1.6)
@@ -894,10 +1164,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA19"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA19"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA19"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="VillageB" type="Node3D" parent="."]
 
@@ -922,10 +1207,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB1"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB2" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45694, -0.1, 1.6)
@@ -948,10 +1248,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB2"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB3" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35694, -0.1, 1.6)
@@ -974,10 +1289,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB3"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB3"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB4" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02694, -0.1, 0.8)
@@ -1000,10 +1330,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB4"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB4"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB5" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96415, 0, 0.8)
@@ -1026,10 +1371,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB5"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB6" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90694, 0, 0.8)
@@ -1052,10 +1412,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB6"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB6"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB6"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB7" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85694, -0.1, 0.8)
@@ -1078,10 +1453,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB7"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB7"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB7"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB8" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57415, -0.1, 0)
@@ -1104,10 +1494,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB8"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB8"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB8"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB9" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47415, 0, 0)
@@ -1130,10 +1535,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB9"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB9"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB9"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB10" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0.154467, 0)
@@ -1156,10 +1576,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB10"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB10"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.85, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB10"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB11" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35694, 0, 0)
@@ -1182,10 +1617,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB11"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB11"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB11"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB12" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25694, -0.1, 0)
@@ -1208,10 +1658,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB12"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB12"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB12"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB13" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02694, -0.1, -0.8)
@@ -1234,10 +1699,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB13"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB13"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB13"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB14" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96415, 0, -0.8)
@@ -1260,10 +1740,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB14"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB14"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB14"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB15" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90694, 0, -0.8)
@@ -1286,10 +1781,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB15"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB15"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB15"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.6, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB16" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85694, -0.1, -0.8)
@@ -1312,10 +1822,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB16"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB16"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB16"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB17" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55694, -0.1, -1.6)
@@ -1338,10 +1863,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB17"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB17"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB17"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB18" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45694, -0.1, -1.6)
@@ -1364,10 +1904,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB18"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB18"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB18"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="BuildingB19" type="MeshInstance3D" parent="VillageB"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35694, -0.1, -1.6)
@@ -1390,10 +1945,25 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB19"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
 visible = false
-modulate = Color(0.90376, 0.321773, 0.143275, 1)
 billboard = 1
-texture = ExtResource("4_vrkdv")
+texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
+
+[node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB19"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB19"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.99989, -0.01119, 0.00974293, 0, 0.65666, 0.754187, -0.0148371, 0.754104, -0.656588, -2.69362, 3.82927, -2.86911)
@@ -1406,18 +1976,38 @@ environment = SubResource("Environment_fklho")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85987, 3.82927, -2.86911)
-target_position = Vector3(2.08165e-12, -5, 5)
+target_position = Vector3(2.08165e-12, -6, 5)
 
-[node name="Card" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, -0.83, -2.1)
+[node name="HutCard" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.7, -0.345, -2.1)
+visible = false
 billboard = 1
-texture = ExtResource("2_en5kp")
+texture = ExtResource("2_m2vna")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Card"]
-top_level = true
+[node name="BonfireCard" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.7, -0.355, -2.1)
+visible = false
+billboard = 1
+texture = ExtResource("3_y06vv")
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Card/StaticBody3D"]
-shape = SubResource("BoxShape3D_pvdoc")
+[node name="BushesCard" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.7, -0.255, -2.1)
+visible = false
+billboard = 1
+texture = ExtResource("4_7dpu4")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
+
+[node name="ToolHutCard" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.7, -0.355, -2.1)
+visible = false
+billboard = 1
+texture = ExtResource("5_tyhyy")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 500)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.908836, 0.417153, 0, -0.417153, 0.908836, -2.56832, 3.13769, 11.9351)
