@@ -1,9 +1,6 @@
-extends Node3D
+extends Node2D
 
-
-enum Building {Food, Bonfire, Population, Strength}
-
-var IsDragging : bool = false
+var MoveSpeed = 450.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,34 +9,34 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var WorldPos = get_node("Camera3D").project_position(get_viewport().get_mouse_position(), 0.0)
-	get_node("RayCast3D").transform.origin = WorldPos
-	if IsDragging:
-		get_node("Card").transform.origin = WorldPos
-		#get_node("Card").transform.origin.x += 1.0
-		get_node("Card").transform.origin.z += 0.5
+	for Saw in get_node("SpinningSaws").get_children():
+		Saw.rotation += 20 * delta
 	
-	#get_node("Card").look_at(get_node("Camera3D").transform.origin)
-	for node in get_node("VillageA").get_children():
-		if node is MeshInstance3D:
-			node.mesh.material.albedo_color = Color.WHITE
-	for node in get_node("VillageB").get_children():
-		if node is MeshInstance3D:
-			node.mesh.material.albedo_color = Color.WHITE
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if IsDragging:
-			get_node("Card").modulate = Color(1, 1, 1, 0.5)
-		if get_node("RayCast3D").get_collider() is StaticBody3D and get_node("RayCast3D").get_collider().get_parent() is MeshInstance3D:
-			get_node("RayCast3D").get_collider().get_parent().mesh.material.albedo_color = Color.RED
-			pass
-		if get_node("RayCast3D").get_collider() is StaticBody3D and get_node("RayCast3D").get_collider().get_parent() is Sprite3D:
-			IsDragging = true
-	elif IsDragging and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		IsDragging = false
-		if get_node("RayCast3D").get_collider() is StaticBody3D and get_node("RayCast3D").get_collider().get_parent() is MeshInstance3D:
-			get_node("RayCast3D").get_collider().get_parent().get_node("Hut").visible = true
-			pass
-	else:
-		IsDragging = false
-		get_node("Card").transform.origin = Vector3(-2.7, -0.83, -2.1)
-	pass
+	if Input.is_action_pressed("game_up"):
+		get_node("CharacterLeft").move_and_collide(Vector2(0.0, -MoveSpeed * delta))
+		get_node("CharacterRight").move_and_collide(Vector2(0.0, -MoveSpeed * delta))
+	if Input.is_action_pressed("game_down"):
+		get_node("CharacterLeft").move_and_collide(Vector2(0.0, MoveSpeed * delta))
+		get_node("CharacterRight").move_and_collide(Vector2(0.0, MoveSpeed * delta))
+	if Input.is_action_pressed("game_left"):
+		get_node("CharacterLeft").move_and_collide(Vector2(-MoveSpeed * delta, 0.0))
+		get_node("CharacterRight").move_and_collide(Vector2(MoveSpeed * delta, 0.0))
+	if Input.is_action_pressed("game_right"):
+		get_node("CharacterLeft").move_and_collide(Vector2(MoveSpeed * delta, 0.0))
+		get_node("CharacterRight").move_and_collide(Vector2(-MoveSpeed * delta, 0.0))
+	
+	get_node("CharacterLeft").move_and_slide()
+	get_node("CharacterRight").move_and_slide()
+	
+	if get_node("CharacterLeft").get_last_slide_collision() != null:
+		print(get_node("CharacterLeft").get_last_slide_collision().get_collider().name)
+		if get_node("CharacterLeft").get_last_slide_collision().get_collider().name == "Damage":
+			if get_node("CharacterLeft").get_last_slide_collision().get_collider().get_parent().modulate.a > 80.0:
+				get_node("CharacterLeft").position = Vector2(258, 204)
+				get_node("CharacterRight").position = Vector2(1661, 204)
+	if get_node("CharacterRight").get_last_slide_collision() != null:
+		print(get_node("CharacterRight").get_last_slide_collision().get_collider().name)
+		if get_node("CharacterRight").get_last_slide_collision().get_collider().name == "Damage":
+			if get_node("CharacterRight").get_last_slide_collision().get_collider().get_parent().modulate.a > 80.0:
+				get_node("CharacterLeft").position = Vector2(258, 204)
+				get_node("CharacterRight").position = Vector2(1661, 204)
