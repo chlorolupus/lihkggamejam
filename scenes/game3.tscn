@@ -435,7 +435,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
 
 [node name="ToolHut" type="Sprite3D" parent="VillageA/BuildingA1"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
-visible = false
 billboard = 1
 texture = ExtResource("5_tyhyy")
 region_enabled = true
@@ -555,7 +554,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
 
 [node name="Bushes" type="Sprite3D" parent="VillageA/BuildingA4"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
-visible = false
 billboard = 1
 texture = ExtResource("4_7dpu4")
 region_enabled = true
@@ -704,7 +702,6 @@ shape = SubResource("ConcavePolygonShape3D_mofsh")
 
 [node name="Hut" type="Sprite3D" parent="VillageA/BuildingA8"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.485, 0)
-visible = false
 billboard = 1
 texture = ExtResource("2_m2vna")
 region_enabled = true
@@ -794,7 +791,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 
 [node name="Bonfire" type="Sprite3D" parent="VillageA/BuildingA10"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
-visible = false
 billboard = 1
 texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
@@ -1303,7 +1299,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 700)
 
 [node name="ToolHut" type="Sprite3D" parent="VillageB/BuildingB3"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.475, 0)
-visible = false
 billboard = 1
 texture = ExtResource("5_tyhyy")
 region_enabled = true
@@ -1459,7 +1454,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
 
 [node name="Bushes" type="Sprite3D" parent="VillageB/BuildingB7"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.575, 0)
-visible = false
 billboard = 1
 texture = ExtResource("4_7dpu4")
 region_enabled = true
@@ -1575,7 +1569,6 @@ region_rect = Rect2(2.08165e-12, 2.08165e-12, 800, 520)
 
 [node name="Bonfire" type="Sprite3D" parent="VillageB/BuildingB10"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75, 0)
-visible = false
 billboard = 1
 texture = ExtResource("3_y06vv")
 region_rect = Rect2(2.08165e-12, 2.08165e-12, 500, 500)
@@ -1649,7 +1642,6 @@ shape = SubResource("ConcavePolygonShape3D_phmgc")
 
 [node name="Hut" type="Sprite3D" parent="VillageB/BuildingB12"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.485, 0)
-visible = false
 billboard = 1
 texture = ExtResource("2_m2vna")
 region_enabled = true

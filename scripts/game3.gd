@@ -13,17 +13,23 @@ var Deck : Array[Building] = [Building.Food, Building.Bonfire, Building.Populati
 							#Building.Food, Building.Food, Building.Food, Building.Food]
 var DeckIndex : int = 0
 
-var VillageBuilding : Array = [[[Building.Empty, 0], [Building.Empty, 0], \
+var VillageBuilding : Array = [[[Building.Strength, 0], [Building.Empty, 0], \
+[Building.Empty, 0], [Building.Food, 0], [Building.Empty, 0], [Building.Empty, 0], \
+[Building.Empty, 0], [Building.Population, 0], [Building.Empty, 0], [Building.Bonfire, 0], \
 [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
 [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], ], [[Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
-[Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
+[Building.Empty, 0], ],
+[[Building.Empty, 0], [Building.Empty, 0], \
+[Building.Strength, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
+[Building.Food, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Bonfire, 0], \
+[Building.Empty, 0], [Building.Population, 0], [Building.Empty, 0], [Building.Empty, 0], \
 [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], [Building.Empty, 0], \
 [Building.Empty, 0],]]
+
+var VillageAStatsGain = [1.0, 1.0, 1.0, 1.0]
+var VillageAStats = [5.0, 5.0, 5.0, 5.0]
+var VillageBStatsGain = [1.0, 1.0, 1.0, 1.0]
+var VillageBStats = [5.0, 5.0, 5.0, 5.0]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,6 +49,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	for i in range(4):
+		VillageAStats[i] += VillageAStatsGain[i] * delta
+		VillageBStats[i] += VillageBStatsGain[i] * delta
+	get_node("Food").transform.origin.x = min(-5.4 * (VillageBStats[0] - VillageAStats[0] + 40) / 80.0, -1.5)
+	if get_node("Food").transform.origin.x < -4.0:
+		get_node("Food").transform.origin.x = -4.0
+	get_node("Bonfire").transform.origin.x = min(-5.4 * (VillageBStats[1] - VillageAStats[1] + 40) / 80.0, -1.5)
+	if get_node("Bonfire").transform.origin.x < -4.0:
+		get_node("Bonfire").transform.origin.x = -4.0
+	get_node("Population").transform.origin.x = min(-5.4 * (VillageBStats[2] - VillageAStats[2] + 40) / 80.0, -1.5)
+	if get_node("Population").transform.origin.x < -4.0:
+		get_node("Population").transform.origin.x = -4.0
+	get_node("Strength").transform.origin.x = min(-5.4 * (VillageBStats[3] - VillageAStats[3] + 40) / 80.0, -1.5)
+	if get_node("Strength").transform.origin.x < -4.0:
+		get_node("Strength").transform.origin.x = -4.0
 	var WorldPos = get_node("Camera3D").project_position(get_viewport().get_mouse_position(), 0.0)
 	get_node("RayCast3D").transform.origin = WorldPos
 	if IsDragging:
@@ -91,18 +112,34 @@ func _process(delta):
 				if Popback == Building.Population:
 					VillageBuilding[ChosenVillage][ChosenSlot][0] = Building.Population
 					VillageBuilding[ChosenVillage][ChosenSlot][1] = 1
+					if ChosenVillage == 0:
+						VillageAStatsGain[2] += 1.0
+					else:
+						VillageBStatsGain[2] += 1.0
 					get_node("RayCast3D").get_collider().get_parent().get_node("Hut").visible = true
 				elif Popback == Building.Bonfire:
 					VillageBuilding[ChosenVillage][ChosenSlot][0] = Building.Bonfire
 					VillageBuilding[ChosenVillage][ChosenSlot][1] = 1
+					if ChosenVillage == 0:
+						VillageAStatsGain[1] += 1.0
+					else:
+						VillageBStatsGain[1] += 1.0
 					get_node("RayCast3D").get_collider().get_parent().get_node("Bonfire").visible = true
 				elif Popback == Building.Food:
 					VillageBuilding[ChosenVillage][ChosenSlot][0] = Building.Food
 					VillageBuilding[ChosenVillage][ChosenSlot][1] = 1
+					if ChosenVillage == 0:
+						VillageAStatsGain[0] += 1.0
+					else:
+						VillageBStatsGain[0] += 1.0
 					get_node("RayCast3D").get_collider().get_parent().get_node("Bushes").visible = true
 				elif Popback == Building.Strength:
 					VillageBuilding[ChosenVillage][ChosenSlot][0] = Building.Strength
 					VillageBuilding[ChosenVillage][ChosenSlot][1] = 1
+					if ChosenVillage == 0:
+						VillageAStatsGain[3] += 1.0
+					else:
+						VillageBStatsGain[3] += 1.0
 					get_node("RayCast3D").get_collider().get_parent().get_node("ToolHut").visible = true
 			elif VillageBuilding[ChosenVillage][ChosenSlot % 19][0] != Building.Empty and VillageBuilding[ChosenVillage][ChosenSlot % 19][0] != Building.Bonfire and Popback == Building.Bonfire:
 				DeckIndex += 1
@@ -123,6 +160,10 @@ func _process(delta):
 					get_node("BonfireCard").visible = true
 				VillageBuilding[ChosenVillage][ChosenSlot][0] = Building.Empty
 				VillageBuilding[ChosenVillage][ChosenSlot][1] = 0
+				if ChosenVillage == 0:
+					VillageAStatsGain[VillageBuilding[ChosenVillage][ChosenSlot % 19][0]] -= 1.0
+				else:
+					VillageBStatsGain[VillageBuilding[ChosenVillage][ChosenSlot % 19][0]] -= 1.0
 				get_node("RayCast3D").get_collider().get_parent().get_node("Hut").visible = false
 				get_node("RayCast3D").get_collider().get_parent().get_node("Bushes").visible = false
 				get_node("RayCast3D").get_collider().get_parent().get_node("ToolHut").visible = false
