@@ -14,6 +14,372 @@ color = Color(0.929412, 0.94902, 0.956863, 1)
 polygon = PackedVector2Array(-128, 1216, 2048, 1216, 2048, -128, -128, -128)
 metadata/_edit_lock_ = true
 
+[node name="SpinningSaws" type="Node2D" parent="."]
+
+[node name="Left" type="Node2D" parent="SpinningSaws"]
+position = Vector2(-1, 2)
+
+[node name="SpinningSaw" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(234, 991)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw2" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(442, 991)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw2" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw2/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw2"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw3" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(640, 991)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw3" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw3/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw3"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw4" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(501, 670)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw4" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw4/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw4"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw5" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(730, 664)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw5" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw5/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw5"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw6" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(523, 332)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw6" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw6/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw6"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw7" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(130, 541)
+rotation = 1.56302
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw7" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw7/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw7"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw9" type="StaticBody2D" parent="SpinningSaws/Left" groups=["damage", "pair0"]]
+position = Vector2(899, 226)
+rotation = 4.66987
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw9" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Left/SpinningSaw9/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Left/SpinningSaw9"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="Right" type="Node2D" parent="SpinningSaws"]
+position = Vector2(894, -5)
+
+[node name="SpinningSaw" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(234, 991)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw2" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(442, 991)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw2" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw2/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw2"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw3" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(640, 991)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw3" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw3/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw3"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw4" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(489, 674)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw4" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw4/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw4"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw5" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(729, 673)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw5" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw5/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw5"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4, 66, 46, 34, 67, -12, 67, -56, 42)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw6" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(489, 341)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw6" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw6/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw6"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw7" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(130, 541)
+rotation = 1.56302
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw7" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw7/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw7"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
+[node name="SpinningSaw9" type="StaticBody2D" parent="SpinningSaws/Right" groups=["damage", "pair0"]]
+position = Vector2(899, 226)
+rotation = 4.66987
+collision_layer = 2
+collision_mask = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw9" groups=["spin"]]
+clip_children = 2
+color = Color(0.552941, 0.6, 0.682353, 1)
+polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
+metadata/area = [6]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/Right/SpinningSaw9/Polygon2D"]
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/Right/SpinningSaw9"]
+position = Vector2(-1, 4)
+polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
+metadata/_edit_lock_ = true
+
 [node name="CharacterLeft" type="CharacterBody2D" parent="."]
 position = Vector2(258, 204)
 
@@ -43,29 +409,6 @@ color = Color(0.118706, 0.355216, 1, 1)
 polygon = PackedVector2Array(-30.9032, -30, -30.9032, 36.2069, 30, 36.2069, 30, -30)
 metadata/_edit_lock_ = true
 
-[node name="SpinningSaws" type="Node2D" parent="."]
-
-[node name="SpinningSaw1" type="Polygon2D" parent="SpinningSaws"]
-modulate = Color(1, 1, 1, 0)
-clip_children = 2
-position = Vector2(234, 991)
-color = Color(0.552941, 0.6, 0.682353, 1)
-polygon = PackedVector2Array(-32, -64, -64, -32, -80, 16, -64, 48, -32, 64, -1, 75, 32, 64, 64, 48, 80, 16, 80, -16, 64, -48, 32, -64, 2, -73)
-
-[node name="Damage" type="StaticBody2D" parent="SpinningSaws/SpinningSaw1"]
-top_level = true
-position = Vector2(233, 992)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpinningSaws/SpinningSaw1/Damage"]
-position = Vector2(0, 5)
-polygon = PackedVector2Array(-72, -7, -63, -40, -23, -70, 26, -72, 65, -43, 79, -4)
-disabled = true
-metadata/_edit_lock_ = true
-
-[node name="Polygon2D2" type="Polygon2D" parent="SpinningSaws/SpinningSaw1"]
-color = Color(0.0646965, 0.0646965, 0.0646965, 1)
-polygon = PackedVector2Array(-6, -7, -5, 11, 6, 8, 7, -9)
-
 [node name="Wall1" type="StaticBody2D" parent="."]
 position = Vector2(0, -35)
 metadata/_edit_lock_ = true
@@ -76,7 +419,7 @@ polygon = PackedVector2Array(0, 0, 0, 1152, 1920, 1152, 1920, 1024, 128, 1024, 1
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall1"]
-polygon = PackedVector2Array(0, 3, 0, 1155, 1920, 1155, 1920, 1027, 128, 1027, 128, 131, 1920, 131, 1920, 3)
+polygon = PackedVector2Array(0, 3, 0, 1155, 1920, 1155, 1920, 1027, 128, 1027, 127, 127, 1921, 125, 1920, 3)
 metadata/_edit_lock_ = true
 
 [node name="Wall2" type="StaticBody2D" parent="."]
@@ -89,7 +432,7 @@ polygon = PackedVector2Array(1792, 1024, 1920, 1024, 1920, 128, 1792, 128)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall2"]
-polygon = PackedVector2Array(1792, 96, 1792, 992, 1920, 992, 1920, 96)
+polygon = PackedVector2Array(1792, 91, 1792, 992, 1920, 992, 1922, 91)
 metadata/_edit_lock_ = true
 
 [node name="Wall3" type="StaticBody2D" parent="."]
@@ -106,7 +449,7 @@ polygon = PackedVector2Array(896, 96, 896, 992, 1024, 992, 1024, 96)
 metadata/_edit_lock_ = true
 
 [node name="Wall4" type="StaticBody2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 32)
 metadata/_edit_lock_ = true
 
 [node name="Polygon2D4" type="Polygon2D" parent="Wall4"]
@@ -116,6 +459,7 @@ polygon = PackedVector2Array(128, 384, 640, 384, 640, 512, 128, 512)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall4"]
+position = Vector2(0, -2)
 polygon = PackedVector2Array(128, 304, 640, 304, 640, 432, 128, 432)
 metadata/_edit_lock_ = true
 
@@ -144,6 +488,7 @@ polygon = PackedVector2Array(128, 384, 640, 384, 640, 512, 128, 512)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall5"]
+position = Vector2(0, -2)
 polygon = PackedVector2Array(128, 304, 640, 304, 640, 432, 128, 432)
 metadata/_edit_lock_ = true
 
@@ -158,5 +503,11 @@ polygon = PackedVector2Array(128, 384, 640, 384, 640, 512, 128, 512)
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall6"]
+position = Vector2(0, -1)
 polygon = PackedVector2Array(128, 304, 640, 304, 640, 432, 128, 432)
 metadata/_edit_lock_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(2.08165e-12, 5)
+collision_mask = 2
+hit_from_inside = true
