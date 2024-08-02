@@ -33,7 +33,7 @@ var VillageAStats = [5.0, 5.0, 5.0, 5.0]
 var VillageBStatsGain = [1.0, 1.0, 1.0, 1.0]
 var VillageBStats = [5.0, 5.0, 5.0, 5.0]
 var game_over : bool = false
-
+var is_started : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Deck.shuffle()
@@ -55,7 +55,8 @@ func _process(delta):
 	get_node("Score").text = "Score: " + str(Score)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		get_node("Label3D").visible = false
-	if not game_over:
+		is_started = true
+	if not game_over and is_started:
 		ScoreTemp += (VillageAStatsGain[0] + VillageBStatsGain[0] + VillageAStatsGain[1] + VillageBStatsGain[1] + VillageAStatsGain[2] + VillageBStatsGain[2] + VillageAStatsGain[3] + VillageBStatsGain[3]) / 10.0
 		if ScoreTemp >= 100.0:
 			var Multipler = 1.0
@@ -227,7 +228,7 @@ func _process(delta):
 			game_over = true
 		if get_node("Bonfire").transform.origin.x >= -1.5 or get_node("Bonfire").transform.origin.x <= -4.0:
 			game_over = true
-	else:
+	elif is_started:
 		get_node("GameOver").visible = true
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			get_tree().reload_current_scene()
