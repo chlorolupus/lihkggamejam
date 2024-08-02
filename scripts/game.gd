@@ -4,9 +4,12 @@ var MoveSpeed = 450.0
 
 var can_start : bool = false
 var pair : Array[bool] = [false]
+var mirror : Array[bool] = [false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for Saw in get_tree().get_nodes_in_group("vert_down"):
+		Saw.set_meta("original_place", Saw.position)
 	pass # Replace with function body.
 
 
@@ -15,7 +18,13 @@ func _process(delta):
 	for Saw in get_tree().get_nodes_in_group("spin"):
 		Saw.rotation += 20 * delta
 	
-	for Saw1 in get_tree().get_nodes_in_group("pair0"):
+	for Saw in get_tree().get_nodes_in_group("vert_down"):
+		Saw.move_and_collide(Vector2(0.0, 100 * delta))
+		if Saw.position.y - Saw.get_meta("original_place").y > 600.0:
+			Saw.position = Saw.get_meta("original_place")
+		
+	
+	for Saw1 in get_tree().get_nodes_in_group("damage"):
 		if Saw1.collision_layer > 1:
 			Saw1.modulate.a = 0.0
 	if not pair[0]:
@@ -24,22 +33,23 @@ func _process(delta):
 				Saw1.modulate.a = 0.5
 	
 	get_node("RayCast2D").position = get_global_mouse_position()
-	if get_node("RayCast2D").get_collider() != null and get_node("RayCast2D").get_collider().has_node("CollisionPolygon2D") and get_node("RayCast2D").get_collider().collision_layer > 1 and not pair[0]:
+	if get_node("RayCast2D").get_collider() != null and get_node("RayCast2D").get_collider().has_node("CollisionPolygon2D") and get_node("RayCast2D").get_collider().collision_layer > 1 and not pair[0] and get_node("RayCast2D").get_collider().is_in_group("pair0"):
 		#get_node("RayCast2D").get_collider().modulate.a = 0.75
 		get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Left").get_child(get_node("RayCast2D").get_collider().get_index()).modulate.a = 0.75
 		get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Right").get_child(get_node("RayCast2D").get_collider().get_index()).modulate.a = 0.75
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if get_node("RayCast2D").get_collider() != null and get_node("RayCast2D").get_collider().has_node("CollisionPolygon2D") and not pair[0]:
+		if get_node("RayCast2D").get_collider() != null and get_node("RayCast2D").get_collider().has_node("CollisionPolygon2D") and not pair[0] and get_node("RayCast2D").get_collider().is_in_group("pair0"):
 			#get_node("RayCast2D").get_collider().collision_layer = 1
 			#get_node("RayCast2D").get_collider().collision_mask = 1
 			#get_node("RayCast2D").get_collider().modulate.a = 1.0
 			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Left").get_child(get_node("RayCast2D").get_collider().get_index()).collision_layer = 1
 			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Right").get_child(get_node("RayCast2D").get_collider().get_index()).collision_layer = 1
-			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Left").get_child(get_node("RayCast2D").get_collider().get_index()).collision_mask = 1
-			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Right").get_child(get_node("RayCast2D").get_collider().get_index()).collision_mask = 1
+			#get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Left").get_child(get_node("RayCast2D").get_collider().get_index()).collision_mask = 1
+			#get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Right").get_child(get_node("RayCast2D").get_collider().get_index()).collision_mask = 1
 			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Left").get_child(get_node("RayCast2D").get_collider().get_index()).modulate.a = 1.0
 			get_node("RayCast2D").get_collider().get_parent().get_parent().get_node("Right").get_child(get_node("RayCast2D").get_collider().get_index()).modulate.a = 1.0
 			pair[0] = true
+			#mirror[0] = true
 			can_start = true
 	
 	if Input.is_action_pressed("game_up") and can_start:
