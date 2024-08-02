@@ -226,15 +226,18 @@ func _process(delta):
 			#get_node("Card").transform.origin = Vector3(-2.7, -0.83, -2.1)
 		if get_node("Food").transform.origin.x >= -1.5 or get_node("Food").transform.origin.x <= -4.0:
 			game_over = true
+			audio_stream[2].play()
 		if get_node("Population").transform.origin.x >= -1.5 or get_node("Population").transform.origin.x <= -4.0:
 			game_over = true
+			audio_stream[2].play()
 		if get_node("Strength").transform.origin.x >= -1.5 or get_node("Strength").transform.origin.x <= -4.0:
 			game_over = true
+			audio_stream[2].play()
 		if get_node("Bonfire").transform.origin.x >= -1.5 or get_node("Bonfire").transform.origin.x <= -4.0:
 			game_over = true
+			audio_stream[2].play()
 	elif is_started:
 		get_node("GameOver").visible = true
-		audio_stream[2].play()
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			get_tree().reload_current_scene()
 	pass
