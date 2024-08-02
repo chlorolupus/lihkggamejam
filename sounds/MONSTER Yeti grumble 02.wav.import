@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyqac84jj6wa7"
+path="res://.godot/imported/MONSTER Yeti grumble 02.wav-8bcf1df0f8c5d22a3d96b822b5fc53ee.sample"
+
+[deps]
+
+source_file="res://sounds/MONSTER Yeti grumble 02.wav"
+dest_files=["res://.godot/imported/MONSTER Yeti grumble 02.wav-8bcf1df0f8c5d22a3d96b822b5fc53ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

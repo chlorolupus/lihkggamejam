@@ -2,7 +2,7 @@ extends Node3D
 
 
 enum Building {Empty = -1, Food = 0, Bonfire, Population, Strength}
-
+@export var audio_stream :Array[AudioStreamPlayer3D] = []
 var IsDragging : bool = false
 var IsLeftClicked : bool = false
 var ChosenSlot : int = 0
@@ -162,6 +162,7 @@ func _process(delta):
 						else:
 							VillageBStatsGain[3] += 1.0
 						get_node("RayCast3D").get_collider().get_parent().get_node("ToolHut").visible = true
+					audio_stream[0].play()
 				elif VillageBuilding[ChosenVillage][ChosenSlot % 19][0] != Building.Empty and VillageBuilding[ChosenVillage][ChosenSlot % 19][0] == Popback:
 					DeckIndex += 1
 					if DeckIndex >= 8:
@@ -210,7 +211,10 @@ func _process(delta):
 					get_node("RayCast3D").get_collider().get_parent().get_node("Hut").visible = false
 					get_node("RayCast3D").get_collider().get_parent().get_node("Bushes").visible = false
 					get_node("RayCast3D").get_collider().get_parent().get_node("ToolHut").visible = false
-				
+					audio_stream[0].play()
+				else:
+					audio_stream[1].play()
+					
 				#IsDragging = true
 		#elif IsDragging and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			#IsDragging = false
@@ -230,6 +234,7 @@ func _process(delta):
 			game_over = true
 	elif is_started:
 		get_node("GameOver").visible = true
+		audio_stream[2].play()
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			get_tree().reload_current_scene()
 	pass

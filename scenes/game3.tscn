@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://madpg3shuegj"]
+[gd_scene load_steps=130 format=3 uid="uid://madpg3shuegj"]
 
 [ext_resource type="Script" path="res://scripts/game3.gd" id="1_8bvr1"]
 [ext_resource type="Texture2D" uid="uid://bhenbk36ekins" path="res://images/sprites/props/Hut_00.png" id="2_m2vna"]
@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://6i4aty6quw7u" path="res://images/sprites/icons/Food.png" id="5_glvf2"]
 [ext_resource type="Texture2D" uid="uid://bfoeuqdwm72g1" path="res://images/sprites/props/Hut_05.png" id="5_tyhyy"]
 [ext_resource type="Texture2D" uid="uid://suxhreia54ba" path="res://images/sprites/icons/Population.png" id="6_ji764"]
+[ext_resource type="AudioStream" uid="uid://b44k4jxrr3v6f" path="res://sounds/Bluezone_BC0297_stone_impact_hammer_015.wav" id="6_m4kds"]
 [ext_resource type="Texture2D" uid="uid://b57frpa25tq2l" path="res://images/sprites/icons/Strength.png" id="7_0miaw"]
+[ext_resource type="AudioStream" uid="uid://cxj11u4mxvyoa" path="res://sounds/Accent,Interface,UI,Alert,Clean,Metallic,Double,Fast.wav" id="7_blfrm"]
+[ext_resource type="AudioStream" uid="uid://cyqac84jj6wa7" path="res://sounds/MONSTER Yeti grumble 02.wav" id="8_xyvql"]
 [ext_resource type="Texture2D" uid="uid://bcoa5v1nqj4pn" path="res://images/sprites/props/Defeat.png" id="10_0dwss"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij2vv"]
@@ -401,8 +404,9 @@ ambient_light_color = Color(0.807955, 0.303978, 4.37697e-07, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkcpu"]
 albedo_color = Color(0.051971, 0.051971, 0.051971, 1)
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node3D" node_paths=PackedStringArray("audio_stream")]
 script = ExtResource("1_8bvr1")
+audio_stream = [NodePath("Camera3D/PlaceSound"), NodePath("Camera3D/ErrorSound"), NodePath("Camera3D/GameOverSound")]
 
 [node name="VillageA" type="Node3D" parent="."]
 
@@ -1963,6 +1967,20 @@ transform = Transform3D(-0.99989, -0.01119, 0.00974293, 0, 0.65666, 0.754187, -0
 projection = 1
 current = true
 size = 5.8
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+
+[node name="PlaceSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(-0.99989, 0, -0.0148371, -0.0111899, 0.65666, 0.754104, 0.00974293, 0.754187, -0.656588, 0, 0, 0)
+stream = ExtResource("6_m4kds")
+
+[node name="ErrorSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(0.999635, -0.0111899, 0.0245773, 0.0111879, 0.999937, 0.000220448, -0.0245782, 5.45382e-05, 0.999698, 0, 0, 0)
+stream = ExtResource("7_blfrm")
+
+[node name="GameOverSound" type="AudioStreamPlayer3D" parent="Camera3D"]
+transform = Transform3D(0.998542, -0.0223738, 0.0491358, 0.0223656, 0.99975, 0.000715822, -0.0491395, 0.000384182, 0.998792, 0, 0, 0)
+stream = ExtResource("8_xyvql")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fklho")
