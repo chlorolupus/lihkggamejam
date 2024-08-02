@@ -27,6 +27,9 @@ const boss_level = 7
 
 var life : int = 3
 
+var new_poly : Polygon2D
+var once : bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for group in deck:
@@ -47,11 +50,40 @@ func _ready():
 	randomize()
 	deck.shuffle()
 	extra_deck.shuffle()
+	#new_poly = Polygon2D.new()
+	#new_poly.polygon = [Vector2(-1000, -1000), Vector2(-1000, 1000), Vector2(1000, 1000), Vector2(1000, -1000)]
+	#new_poly.color = Color.RED
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if once:
+		once = false
+		#get_node("Background").add_child(new_poly)
+		#new_poly.set_owner(get_tree().root)
+		var inde = 3
+		for node in get_tree().get_nodes_in_group("spin"):
+			node.light_mask = 0
+			node.z_index = inde
+			node.get_child(0).z_index = 1
+			inde += 10
+		for node in get_tree().get_nodes_in_group("walls"):
+			node.get_node("Polygon2D").light_mask = 0
+			node.get_node("Polygon2D").z_index = inde
+			inde += 10
+					#for node in get_tree().get_nodes_in_group("walls"):
+			#node.get_node("Polygon2D").polygon.push_back(Vector2(0.0, 0.0))
+			#node.get_node("Polygon2D").polygon.pop_back()
+			#node.remove_child(new_node)
+			#new_node.set_owner(null)
+			#node.add_child(new_node)
+			#new_node.set_owner(node)
+		#for node in get_tree().get_nodes_in_group("spin"):
+			#pass
+		#print(new_poly.get_parent())
+		#print(new_poly.get_index())
 	if life > 0 and score < 25:
 		for Saw in get_tree().get_nodes_in_group("spin"):
 			Saw.rotation += 20 * delta
