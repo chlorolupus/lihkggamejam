@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://madpg3shuegj"]
+[gd_scene load_steps=127 format=3 uid="uid://madpg3shuegj"]
 
 [ext_resource type="Script" path="res://scripts/game3.gd" id="1_8bvr1"]
 [ext_resource type="Texture2D" uid="uid://bhenbk36ekins" path="res://images/sprites/props/Hut_00.png" id="2_m2vna"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfoeuqdwm72g1" path="res://images/sprites/props/Hut_05.png" id="5_tyhyy"]
 [ext_resource type="Texture2D" uid="uid://suxhreia54ba" path="res://images/sprites/icons/Population.png" id="6_ji764"]
 [ext_resource type="Texture2D" uid="uid://b57frpa25tq2l" path="res://images/sprites/icons/Strength.png" id="7_0miaw"]
+[ext_resource type="Texture2D" uid="uid://bcoa5v1nqj4pn" path="res://images/sprites/props/Defeat.png" id="10_0dwss"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij2vv"]
 
@@ -2050,3 +2051,9 @@ transform = Transform3D(-0.0157074, -0.999877, 3.48787e-16, 0.999877, -0.0157074
 radius = 0.02
 height = 2.609
 material = SubResource("StandardMaterial3D_gkcpu")
+
+[node name="GameOver" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.688, 1.84007, -0.146351)
+visible = false
+billboard = 1
+texture = ExtResource("10_0dwss")
