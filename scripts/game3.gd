@@ -6,6 +6,8 @@ enum Building {Empty = -1, Food = 0, Bonfire, Population, Strength}
 var IsDragging : bool = false
 var IsLeftClicked : bool = false
 var ChosenSlot : int = 0
+var Score : int = 0
+var ScoreTemp : float = 0.0
 
 var Deck : Array[Building] = [Building.Food, Building.Bonfire, Building.Population, Building.Strength, \
 							Building.Food, Building.Bonfire, Building.Population, Building.Strength]
@@ -50,9 +52,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node("Score").text = "Score: " + str(Score)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		get_node("Label3D").visible = false
 	if not game_over:
+		ScoreTemp += (VillageAStatsGain[0] + VillageBStatsGain[0] + VillageAStatsGain[1] + VillageBStatsGain[1] + VillageAStatsGain[2] + VillageBStatsGain[2] + VillageAStatsGain[3] + VillageBStatsGain[3]) / 10.0
+		if ScoreTemp >= 100.0:
+			var Multipler = 1.0
+			if get_node("Food").transform.origin.x < -3.0 or get_node("Food").transform.origin.x > -0.5:
+				Multipler += 0.5
+			if get_node("Bonfire").transform.origin.x < -3.0 or get_node("Food").transform.origin.x > -0.5:
+				Multipler += 0.5
+			if get_node("Population").transform.origin.x < -3.0 or get_node("Food").transform.origin.x > -0.5:
+				Multipler += 0.5
+			if get_node("Strength").transform.origin.x < -3.0 or get_node("Food").transform.origin.x > -0.5:
+				Multipler += 0.5
+			Score += 100 * Multipler
+			ScoreTemp = 0.0
 		for i in range(4):
 			VillageAStats[i] += VillageAStatsGain[i] * delta
 			VillageBStats[i] += VillageBStatsGain[i] * delta

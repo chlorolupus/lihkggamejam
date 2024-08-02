@@ -2067,3 +2067,8 @@ text = "Press any space to restart"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.6442, 1.54147, 0)
 billboard = 1
 text = "Click on Empty Space to Place Building"
+
+[node name="Score" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13, 4.255, 2.08165e-12)
+billboard = 1
+text = "Score: 0"
