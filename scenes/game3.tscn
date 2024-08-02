@@ -406,7 +406,7 @@ albedo_color = Color(0.051971, 0.051971, 0.051971, 1)
 
 [node name="Game" type="Node3D" node_paths=PackedStringArray("audio_stream")]
 script = ExtResource("1_8bvr1")
-audio_stream = [NodePath("Camera3D/PlaceSound"), NodePath("Camera3D/ErrorSound"), NodePath("Camera3D/GameOverSound")]
+audio_stream = [NodePath("Camera3D/PlaceSound"), NodePath("Camera3D/ErrorSound"), NodePath("Camera3D/ErrorSound")]
 
 [node name="VillageA" type="Node3D" parent="."]
 
@@ -2084,7 +2084,9 @@ text = "Press any space to restart"
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.6442, 1.54147, 0)
 billboard = 1
-text = "Click on Empty Space to Place Building"
+text = "Click on Empty Space to Place Building
+Try to be unbalanced to get more score!
+Don't tilt too much or you will die!"
 
 [node name="Score" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13, 4.255, 2.08165e-12)
