@@ -2053,7 +2053,17 @@ height = 2.609
 material = SubResource("StandardMaterial3D_gkcpu")
 
 [node name="GameOver" type="Sprite3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.688, 1.84007, -0.146351)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.688, 2.34178, -0.146351)
 visible = false
 billboard = 1
 texture = ExtResource("10_0dwss")
+
+[node name="Label3D" type="Label3D" parent="GameOver"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -6.41516, 0)
+billboard = 1
+text = "Press any space to restart"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.6442, 1.54147, 0)
+billboard = 1
+text = "Click on Empty Space to Place Building"

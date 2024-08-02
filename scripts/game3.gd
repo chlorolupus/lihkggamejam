@@ -50,6 +50,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		get_node("Label3D").visible = false
 	if not game_over:
 		for i in range(4):
 			VillageAStats[i] += VillageAStatsGain[i] * delta
