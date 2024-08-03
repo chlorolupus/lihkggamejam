@@ -29,6 +29,7 @@ var life : int = 3
 
 var new_poly : Polygon2D
 var once : bool = true
+var won : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -84,7 +85,7 @@ func _process(delta):
 			#pass
 		#print(new_poly.get_parent())
 		#print(new_poly.get_index())
-	if life > 0 and score < 25:
+	if life > 0 and not won:
 		for Saw in get_tree().get_nodes_in_group("spin"):
 			Saw.rotation += 20 * delta
 		
@@ -171,10 +172,11 @@ func _process(delta):
 			if Saw1.collision_layer > 1 and Saw1.collision_layer != 16:
 				Saw1.modulate.a = 0.0
 		
-		
 		if is_next_level:
-			get_node("CharacterLeft").collision_layer = 32
-			get_node("CharacterRight").collision_layer = 32
+			get_node("CharacterLeft").collision_layer = 0
+			get_node("CharacterRight").collision_layer = 0
+			get_node("CharacterLeft").collision_mask = 0
+			get_node("CharacterRight").collision_mask = 0
 			if deck_index != boss_level and deck[deck_index][0] == "pair":
 				#if not pair[deck[deck_index][1]]:
 				for Saw1 in get_tree().get_nodes_in_group(deck[deck_index][0] + str(deck[deck_index][1])):
@@ -195,6 +197,9 @@ func _process(delta):
 				if node.collision_layer == 4:
 					node.collision_layer = 64
 			for node in get_tree().get_nodes_in_group(deck[deck_index][0] + str(deck[deck_index][1])):
+				if node.collision_layer == 64:
+					node.collision_layer = 4
+			for node in get_tree().get_nodes_in_group(extra_deck[0][0] + str(extra_deck[0][1])):
 				if node.collision_layer == 64:
 					node.collision_layer = 4
 			get_node("RayCast2D").position = get_global_mouse_position()
@@ -231,29 +236,31 @@ func _process(delta):
 					can_start = true
 					is_next_level = false
 					
-					if deck_index != boss_level:
-						score += 2
-					else:
-						score += 1
+					score += 2
 					
-					get_node("CharacterLeft").collision_layer = 32
-					get_node("CharacterRight").collision_layer = 32
+					get_node("CharacterLeft").collision_layer = 1
+					get_node("CharacterRight").collision_layer = 1
+					get_node("CharacterLeft").collision_mask = 1
+					get_node("CharacterRight").collision_mask = 1
 				elif deck_index == boss_level and get_node("RayCast2D").get_collider() != null and get_node("RayCast2D").get_collider().has_node("CollisionPolygon2D") and get_node("RayCast2D").get_collider().is_in_group(extra_deck[0][0] + str(extra_deck[0][1])):
 					#get_node("RayCast2D").get_collider().collision_layer = 1
 					#get_node("RayCast2D").get_collider().collision_mask = 1
 					#get_node("RayCast2D").get_collider().modulate.a = 1.0
 					get_node("RayCast2D").get_collider().collision_layer = 1
 					get_node("RayCast2D").get_collider().modulate.a = 1.0
-					if get_node("RayCast2D").get_collider().is_in_group("appear"):
-						can_appear = true
-						for node in get_tree().get_nodes_in_group("appear"):
-							node.modulate.a = 0.99
+					#if get_node("RayCast2D").get_collider().is_in_group("appear"):
+					can_appear = true
+					for node in get_tree().get_nodes_in_group("appear"):
+						node.modulate.a = 0.99
 					#mirror[0] = true
 					can_start = true
 					is_next_level = false
+					score += 1
 					
 					get_node("CharacterLeft").collision_layer = 1
 					get_node("CharacterRight").collision_layer = 1
+					get_node("CharacterLeft").collision_mask = 1
+					get_node("CharacterRight").collision_mask = 1
 		
 		if Input.is_action_pressed("game_up") and can_start:
 			get_node("CharacterLeft").move_and_collide(Vector2(0.0, -MoveSpeed * delta))
@@ -277,35 +284,57 @@ func _process(delta):
 				get_node("CharacterLeft").position = Vector2(258, 204)
 				get_node("CharacterRight").position = Vector2(1661, 204)
 				life -= 1
+				
+				get_node("CharacterLeft").collision_layer = 1
+				get_node("CharacterRight").collision_layer = 1
+				get_node("CharacterLeft").collision_mask = 1
+				get_node("CharacterRight").collision_mask = 1
 			if get_node("CharacterLeft").get_last_slide_collision().get_collider().is_in_group("flag"):
 				get_node("CharacterLeft").position = Vector2(258, 204)
 				get_node("CharacterRight").position = Vector2(1661, 204)
 				deck_index += 1
-				if deck_index < min(12, deck.size()):
+				if deck_index < min(13, deck.size()):
 					can_start = false
 					is_next_level = true
+				
+				if score >= 25:
+					won = true
+				get_node("CharacterLeft").collision_layer = 0
+				get_node("CharacterRight").collision_layer = 0
+				get_node("CharacterLeft").collision_mask = 0
+				get_node("CharacterRight").collision_mask = 0
 		elif get_node("CharacterRight").get_last_slide_collision() != null and can_start:
 			#print(get_node("CharacterRight").get_last_slide_collision().get_collider().name)
 			if get_node("CharacterRight").get_last_slide_collision().get_collider().is_in_group("damage"):
 				get_node("CharacterLeft").position = Vector2(258, 204)
 				get_node("CharacterRight").position = Vector2(1661, 204)
 				life -= 1
+				
+				get_node("CharacterLeft").collision_layer = 1
+				get_node("CharacterRight").collision_layer = 1
+				get_node("CharacterLeft").collision_mask = 1
+				get_node("CharacterRight").collision_mask = 1
 			if get_node("CharacterRight").get_last_slide_collision().get_collider().is_in_group("flag"):
 				get_node("CharacterLeft").position = Vector2(258, 204)
 				get_node("CharacterRight").position = Vector2(1661, 204)
 				deck_index += 1
-				if deck_index < min(12, deck.size()):
+				if deck_index < min(13, deck.size()):
 					can_start = false
 					is_next_level = true
-				else:
-					pass
+				if score >= 25:
+					won = true
+				
+				get_node("CharacterLeft").collision_layer = 0
+				get_node("CharacterRight").collision_layer = 0
+				get_node("CharacterLeft").collision_mask = 0
+				get_node("CharacterRight").collision_mask = 0
 		get_node("Polygon2D/Label").text = str(life)
 		get_node("Score").text = str("Disc " + str(score))
 	elif life == 0:
 		get_node("GameOver").visible = true
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			get_tree().reload_current_scene()
-	elif score >= 25:
+	elif score >= 25 and won:
 		get_node("Win").visible = true
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			get_tree().reload_current_scene()
